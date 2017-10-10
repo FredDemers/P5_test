@@ -1,10 +1,19 @@
-function setup() {
- createCanvas(windowWidth,windowHeight); 
+document.ontouchmove = function(event){
+ event.preventDefault();
 }
 
-function draw()
-{}
+function setup() {
+ createCanvas(windowWidth,windowHeight);
+ rectMode(CENTER);
+ stroke(0);
+ noFill();
+ strokeWeight(5);
+}
 
-function touchStarted() {
- background(random(0,255),random(0,255),random(0,255));
+function draw(){
+ background(255);
+ 
+ for(var i=0;i<touches.length;i++){
+  rect(touches[i].x,touches[i].y,150,150);
+  }
 }
